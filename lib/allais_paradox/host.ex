@@ -54,21 +54,6 @@ defmodule AllaisParadox.Host do
     Actions.all_reset(data)
   end
 
-  def send_result(data, result) do
-    data = data  |> Map.put(:participants, Enum.into(Enum.map(data.participants, fn { id, value } ->
-      {id, value |> Map.put(:oneone, result["oneone"]) |> Map.put(:onetwo, result["onetwo"]) |> Map.put(:twoone, result["twoone"]) |> Map.put(:twotwo, result["twotwo"])} end), %{}))
-                 |> Map.put(:oneone, result["oneone"]) |> Map.put(:onetwo, result["onetwo"]) |> Map.put(:twoone, result["twoone"]) |> Map.put(:twotwo, result["twotwo"])
-                 |> Map.put(:answered, 0)
-    Actions.send_result(data, result)
-  end
-
-  def update_question(data, question_text) do
-    data = data |> Map.put(:question_text, question_text)
-                     |> Map.put(:participants, Enum.into(Enum.map(data.participants, fn { id, value } ->
-                       { id, value |> Map.put(:question_text, question_text) } end), %{}))
-    Actions.update_question(data, question_text)
-  end
-
   # Utilities
   def format_contents(data) do
     data

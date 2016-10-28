@@ -45,7 +45,7 @@ class Experiment2 extends Component {
           }
         }
       }
-      manyTypeData("dnd",result)
+      manyTypeData("dnd",JSON.parse(JSON.stringify(result)))
       console.log("result in:%s",JSON.stringify(result,null,'\t'))
     }
     Num++

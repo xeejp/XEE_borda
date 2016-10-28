@@ -30,8 +30,6 @@ defmodule AllaisParadox do
       {"fetch contents", _} -> Host.fetch_contents(data)
       {"change page", page} -> Host.change_page(data, page)
       {"all reset", _}      -> Host.all_reset(data)
-      {"send result", result} -> Host.send_result(data, result)
-      {"update question", question_text} -> Host.update_question(data, question_text)
       _ -> {:ok, %{"data" => data}}
     end
     wrap_result(result)

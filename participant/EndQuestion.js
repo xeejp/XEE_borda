@@ -8,8 +8,8 @@ import { Card, CardText } from 'material-ui/Card'
 import Divider from 'material-ui/Divider'
 
 
-const mapStateToProps = ({allresult}) => ({
-  allresult
+const mapStateToProps = ({sequence, question1, question2 }) => ({
+  sequence, question1, question2 
 })
 
 class EndQuestion extends Component {
@@ -20,15 +20,14 @@ class EndQuestion extends Component {
   }
 
   render() {
-    const { result , allresult} = this.props
-    return (
+    const { sequence, question1, question2, result } = this.props
+  return (
       <Card><CardText>
           <div style={{height: 'auto'}}>
             <div style={{overflow: 'hidden'}}>
               <p>実験終了</p>
               <p>result:{JSON.stringify(result)}</p>
-              <p>allresult:{JSON.stringify(allresult)}</p>
-              
+
             </div>
           </div>
       </CardText></Card>

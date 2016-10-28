@@ -3,16 +3,12 @@ import { connect } from 'react-redux'
 
 import { fetchContents } from './actions'
 
-import Chart from 'components/Chart'
+class Result extends Component{
+  render(){
+    return(
+      <p>participant/Result.js now</p>
+    )
+  }
+}
 
-const mapStateToProps = ({ oneone, onetwo, twoone, twotwo }) => ({
-  oneone, onetwo, twoone, twotwo
-})
-
-const Result = ({ oneone, onetwo, twoone, twotwo }) => (
-  <div>
-    <Chart oneone={oneone} onetwo={onetwo} twoone={twoone} twotwo={twotwo} expanded={true} />
-  </div>
-)
-
-export default connect(mapStateToProps)(Result)
+export default connect()(Result)

@@ -35,18 +35,6 @@ defmodule AllaisParadox.Actions do
     format(data, haction, allaction)
   end
 
-  def send_result(data, result) do
-    haction = get_action("result", result)
-    paction = get_action("result", result)
-    format(data, haction, dispatch_to_all(data, paction))
-  end
-
-  def update_question(data, question_text) do
-    haction = get_action("qupdate", question_text)
-    paction = get_action("qupdate", question_text)
-    format(data, haction, dispatch_to_all(data, paction))
-  end
-
   def update_participant_contents(data, id) do
     participant = dispatch_to(id, get_action("update contents", Participant.format_contents(data, id)))
     format(data, nil, participant)
