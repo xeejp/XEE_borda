@@ -7,17 +7,6 @@ function* changePageSaga() {
     const { payload } = yield take(`${submitPage}`)
     sendData('change page', payload)
     if(payload == "waiting" || payload == "experiment") yield call(sendData, 'all reset')
-    if(payload ==     "result") {
-      const { participants: participants } = yield select( participants => participants)
-      var ans = [[0, 0], [0, 0]]
-      if(participants != undefined){
-        for(var i in participants) {
-          if(participants[i].question2 != 0){
-            ans[participants[i].question1 - 1][participants[i].question2 - 1]++
-          }
-        }
-      }
-    }
     yield put(changePage(payload))
   }
 }
