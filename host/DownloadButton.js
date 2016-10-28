@@ -15,10 +15,13 @@ class DownloadButton extends Component {
       = "ID,1問目の回答,2問目の回答\n"
         + Object.keys(participants).map(id => [id, 
             
+            "5段階評価",
 
             participants[id].question1,
             
-            JSON.parse(JSON.stringify(participants[id].question2))
+            "Drag and Drop",
+
+            participants[id].question2
         
         ].join(',')).join("\n")
     return (

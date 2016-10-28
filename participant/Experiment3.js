@@ -15,6 +15,7 @@ const mapStateToProps = ({}) => ({
 
 let DnDResult = new Array()
 let Num = 0
+let ResultCounter = 0
 
 class Experiment2 extends Component {
   constructor(props) {
@@ -29,19 +30,20 @@ class Experiment2 extends Component {
       this.setState(DnDResult)
     }
     if(Num == EvaluationAxis.length){
-      let result    = new Object()
+      let result    = new Array()
       const { manyTypeData } = this.props
 
       for(let i=0; i<=EvaluationAxis.length; i++){
-        result[i] = new Object()
         if(i < EvaluationAxis.length){
           for(let d=0; d<Subjects.length; d++){
-            result[i][d] = DnDResult[i][d][1]
+            result[ResultCounter] = DnDResult[i][d][1]
+            ResultCounter++
           }
         }
         if(i == EvaluationAxis.length){
           for(let l=0; l<EvaluationAxis.length; l++){
-            result[i][l] = DnDResult[i][l][1]
+            result[ResultCounter] = DnDResult[i][l][1]
+            ResultCounter++
           }
         }
       }
