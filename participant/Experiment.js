@@ -41,7 +41,7 @@ class Experiment extends Component {
   manyTypeData(fromData, dtArray){
     result[fromData] = dtArray 
     console.log("kannsu now")
-    this.props.nextQuestion(dt)
+    this.props.nextQuestion(dtArray)
 
     if(fromData == "5axis"){
     console.log("if now")

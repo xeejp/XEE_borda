@@ -41,7 +41,8 @@ defmodule AllaisParadox do
   def handle_received(data, %{"action" => action, "params" => params}, id) do
     result = case {action, params} do
       {"fetch contents", _} -> Participant.fetch_contents(data, id)
-      {"next question", selected} -> Participant.next_question(data, id, selected)
+      {"next question 2", selected} -> Participant.next_question_2(data, id, selected)
+      {"next question ans", selected} -> Participant.next_question_ans(data, id, selected)
       _ -> {:ok, %{"data" => data}}
     end
     wrap_result(result)

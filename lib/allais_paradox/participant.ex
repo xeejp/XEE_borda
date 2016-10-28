@@ -6,16 +6,18 @@ defmodule AllaisParadox.Participant do
     Actions.update_participant_contents(data, id)
   end
 
-  def next_question(data, id, selected) do
+  def next_question_2(data, id, selected) do
     IO.puts(selected["next"])
     data = data |> put_in([:participants, id, :sequence], selected["next"])
-    if selected["next"] == "question2" do
-      data = data |> put_in([:participants, id, :question1], selected["selected"])
-    end
-    if selected["next"] == "answered" do
-      data = data |> Map.put(:answered, data.answered + 1)
-      data = data |> put_in([:participants, id, :question2], selected["selected"])
-    end
+    data = data |> put_in([:participants, id, :question1], selected["selected"])
+    Actions.next_question(data, id, selected)
+  end
+
+  def next_question_ans(data, id, selected) do
+    IO.puts(selected["next"])
+    data = data |> put_in([:participants, id, :sequence], selected["next"])
+    data = data |> Map.put(:answered, data.answered + 1)
+    data = data |> put_in([:participants, id, :question2], selected["selected"])
     Actions.next_question(data, id, selected)
   end
 

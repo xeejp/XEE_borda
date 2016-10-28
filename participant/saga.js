@@ -20,11 +20,17 @@ function* nextQuestionSaga() {
     console.log("_________saga_count_before:%s",sequences[count])
     let next = sequences[count]
     console.log("_________saga_count_after :%s",sequences[count])
-    
 
 
-    yield call(sendData, 'next question', {selected: selected, next: next})
-    console.log("saGa & %s",next)
+    if(next == "question2"){
+      yield call(sendData, 'next question 2', {selected: selected, next: next})
+      console.log("saGa & %s",next)
+    }
+    if(next == "answered"){
+      yield call(sendData, 'next question ans', {selected: selected, next: next})
+      console.log("saGa & %s",next)
+    }
+
   }
 }
 

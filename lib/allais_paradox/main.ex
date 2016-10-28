@@ -50,8 +50,8 @@ defmodule AllaisParadox.Main do
     %{
       question_text: data.question_text,
       sequence: "question1",
-      question1: 0,
-      question2: 0,
+      question1: %{},
+      question2: %{},
       active: true,
       joined: 1,
       qswap: false,
