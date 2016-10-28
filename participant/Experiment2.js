@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import SwipeableViews from 'react-swipeable-views'
 import RaisedButton from 'material-ui/RaisedButton'
-import {Card, CardHeader, CardText} from 'material-ui/Card'
+import {Card, CardText, CardTitle } from 'material-ui/Card'
 import Slider from 'material-ui/Slider'
 
 const mapStateToProps = ({}) => ({
@@ -82,13 +82,14 @@ class Experiment2 extends Component {
     return(
       <div>
         <Card>
+          <CardTitle title="ボルダルール実験" subtitle="5段階評価" />
           <div  style={{marginBottom: "5%", padding:"5%"}}>
             <Card>
               <SwipeableViews
                 index={this.state.slideIndex}
               >
                 <div style={{overflow: 'hidden'}}>
-                  <p>1/6</p>
+                  <p style={{ marginLeft: "2%"}}>1/6</p>
                   <Slider
                     style={{padding:"5%"}}
                     min={0}
@@ -108,7 +109,7 @@ class Experiment2 extends Component {
                   </p>
                 </div>
                 <div style={{overflow: 'hidden'}}>
-                  <p>2/6</p>
+                  <p style={{ marginLeft: "2%"}}>2/6</p>
                   <Slider
                     style={{padding:"5%"}}
                     min={0}
@@ -129,7 +130,7 @@ class Experiment2 extends Component {
                 </div>
 
                 <div style={{overflow: 'hidden'}}>
-                  <p>3/6</p>
+                  <p style={{ marginLeft: "2%"}}>3/6</p>
                   <Slider
                     style={{padding:"5%"}}
                     min={0}
@@ -150,7 +151,7 @@ class Experiment2 extends Component {
                 </div>
 
                 <div style={{overflow: 'hidden'}}>
-                  <p>4/6</p>
+                  <p style={{ marginLeft: "2%"}}>4/6</p>
                   <Slider
                     style={{padding:"5%"}}
                     min={0}
@@ -171,7 +172,7 @@ class Experiment2 extends Component {
                 </div>
 
                 <div style={{overflow: 'hidden'}}>
-                  <p>5/6</p>
+                  <p style={{ marginLeft: "2%"}}>5/6</p>
                   <Slider
                     style={{padding:"5%"}}
                     min={0}
@@ -192,7 +193,7 @@ class Experiment2 extends Component {
                 </div>
 
                 <div style={{overflow: 'hidden'}}>
-                  <p>6/6</p>
+                  <p style={{ marginLeft: "2%"}}>6/6</p>
                   <Slider
                     style={{padding:"5%"}}
                     min={0}
@@ -212,16 +213,11 @@ class Experiment2 extends Component {
                   </p>
                 </div>
 
-                <div>
-                  <CardHeader
-                    title="ボルダ実験"
-                    subtitle={"5段階評価"}
-                  />
-                  <CardText expandable={false}>
-                    <p>5段階終了。</p>
-                  </CardText>
+                <div style={{ marginLeft: "2%"}}>
+                  <p>5段階評価が終了しました。</p>
+                  <p>左下の「次へ」をクリックしてください。</p><br />
+                  <p>並び替え評価に遷移します。</p>
                 </div>
-
               </SwipeableViews>
             </Card>
           </div>
@@ -256,12 +252,11 @@ class Experiment2 extends Component {
             onTouchTap={this.handleBack.bind(this)}
             disabled={this.state.slideIndex == 0}
           />
-          <p>slideResult_array:{JSON.stringify(slideResult)}</p>
-      </div>
+        </div>
 
 
-    </Card>
-  </div>
+      </Card>
+    </div>
     )
   }
 }

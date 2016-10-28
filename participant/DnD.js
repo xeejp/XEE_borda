@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+import TouchBackend from 'react-dnd-touch-backend';
+import {Card, CardText, CardTitle } from 'material-ui/Card'
+
 import FirstCard from './dnd/FirstCard'
 import Box from './dnd/Box'
 import MiniBox from './dnd/MiniBox'
 import Subjects from 'util/Subjects'
 import EvaluationAxis from 'util/EvaluationAxis'
 import Button from './dnd/Button'
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
-import TouchBackend from 'react-dnd-touch-backend';
 
-import {Card} from 'material-ui/Card'
 
 let array     = new Array();
 let data      = new Array();
@@ -100,38 +101,38 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <div style={{float:'left'}}>
-          <Card>
-            <Box pageCounter={pageCounter}>
-              {array.map((dt,i) => <MiniBox
-                key={dt[2]}
-                index={i} 
-                id={dt[0]} 
-                text={dt[1]}
-                dragDropCard={this.dragDropCard}
-                dragCard={this.dragCard}
-              />)}
-            </Box>
-          </Card>
-          <Button next={this.next} array={array}/>
-        </div>
-        <div style={{ float: 'right' }}>
-          <Card>
-            {data.map((card, i) => {
-              return (
-                <FirstCard
-                  key={card[0]}
-                  index={i}
-                  id={card[0]}
-                  text={card[1]}
-                />
-              );
-            })}
-          </Card>
-
-        </div>
-      </div>
+        <Card style={{overflow: 'hidden'}}>
+            <CardTitle title="ボルダルール実験" subtitle="並び替え評価" />
+            <div style={{float:'left', marginLeft: '10%'}}>
+              <Card>
+                <Box pageCounter={pageCounter}>
+                  {array.map((dt,i) => <MiniBox
+                    key={dt[2]}
+                    index={i} 
+                    id={dt[0]} 
+                    text={dt[1]}
+                    dragDropCard={this.dragDropCard}
+                    dragCard={this.dragCard}
+                  />)}
+                </Box>
+              </Card>
+              <Button next={this.next} array={array}/>
+            </div>
+            <div style={{ float: 'right', marginRight: '10%'}}>
+              <Card>
+                {data.map((card, i) => {
+                  return (
+                    <FirstCard
+                      key={card[0]}
+                      index={i}
+                      id={card[0]}
+                      text={card[1]}
+                    />
+                  );
+                })}
+              </Card>
+            </div>
+        </Card>
     );
   }
 }

@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
-import RaisedButton from 'material-ui/RaisedButton'
-import SwipeableViews from 'react-swipeable-views'
-import { Card, CardText } from 'material-ui/Card'
-import Divider from 'material-ui/Divider'
+import {Card, CardText, CardTitle } from 'material-ui/Card'
+import CircularProgress from 'material-ui/CircularProgress'
 
 
 const mapStateToProps = ({sequence, question1, question2 }) => ({
@@ -20,17 +17,17 @@ class EndQuestion extends Component {
   }
 
   render() {
-    const { sequence, question1, question2, result } = this.props
-  return (
-      <Card><CardText>
-          <div style={{height: 'auto'}}>
-            <div style={{overflow: 'hidden'}}>
-              <p>実験終了</p>
-              <p>result:{JSON.stringify(result)}</p>
-
-            </div>
-          </div>
-      </CardText></Card>
+    return (
+      <Card>
+        <CardTitle title="ボルダルール実験" subtitle="質問終了画面" />
+        <CardText>
+          <p>これで質問を終了します。</p>
+          <p>しばらくお待ちください。</p>
+        </CardText>
+        <div style={{textAlign: "center"}}>
+          <CircularProgress size={2}/>
+        </div>
+      </Card>
     )
   }
 }
