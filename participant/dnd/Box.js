@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {Card, CardHeader} from 'material-ui/Card'
-import EvaluationAxis from 'util/EvaluationAxis'
 
 const mapStateToProps = ()=> {
 }
@@ -14,35 +13,16 @@ const style = {
 class Box extends Component{
   render(){
     const { pageCounter } = this.props
-    if(pageCounter < EvaluationAxis.length){
       return (
         <div style={{...style }}>
-          <Card style={{backgroundColor: '#B2EBF2'}}>
+          <Card style={{marginBottom: '.5rem', backgroundColor: (pageCounter == 0)?'#64FFDA':(pageCounter == 1)?'#76FF03':'white'}}>
             <CardHeader
-              title={EvaluationAxis[pageCounter]}
+              title="この下にドロップしてください"
             />
           </Card>
           {this.props.children}
         </div>
       );
-    }
-    if(pageCounter == EvaluationAxis.length){
-      return (
-        <div style={{...style }}>
-          <Card style={{backgroundColor: '#B2EBF2'}}>
-            <CardHeader
-              title="Sort Evaluation Axis"
-            />
-          </Card>
-          {this.props.children}
-        </div>
-      );
-    }
-    else{
-      return (
-        <p>dnd is finished (printed by Box.js)</p>
-      )
-    }
   }
 }
 

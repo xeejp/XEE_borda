@@ -103,6 +103,7 @@ class App extends Component {
     return (
         <Card style={{overflow: 'hidden'}}>
             <CardTitle title="ボルダルール実験" subtitle="並び替え評価" />
+            <p>この色のボタンについて答えてください</p>
             <div style={{float:'left', marginLeft: '10%'}}>
               <Card>
                 <Box pageCounter={pageCounter}>

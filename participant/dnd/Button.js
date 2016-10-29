@@ -10,6 +10,7 @@ const mapStateToProps = ()=> {
 const style = {
   marginLeft: '3%',
   float: 'left',
+  marginBottom: '.5rem',
 }
 
 
