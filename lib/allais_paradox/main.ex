@@ -13,11 +13,13 @@ defmodule AllaisParadox.Main do
       participants: %{},
       joined: 0,
       answered: 0,
+      finish_description_number: 0,
         }
   end
 
   def new_participant(data) do
     %{
+      is_finish_description: 0,
       sequence: "question1",
       question1: %{},
       question2: %{},

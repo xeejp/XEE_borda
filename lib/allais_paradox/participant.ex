@@ -6,6 +6,12 @@ defmodule AllaisParadox.Participant do
     Actions.update_participant_contents(data, id)
   end
 
+  def finish_description(data, id) do
+    data = data |> Map.put(:finish_description_number, data.finish_description_number + 1)
+    update_in(data, [:participants, id, :is_finish_description], fn _ -> data.finish_description_number end)
+    Action.finish_description(data ,id)
+  end
+
   def next_question_2(data, id, selected) do
     IO.puts(selected["next"])
     data = data |> put_in([:participants, id, :sequence], selected["next"])

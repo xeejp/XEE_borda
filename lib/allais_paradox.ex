@@ -41,6 +41,7 @@ defmodule AllaisParadox do
       {"fetch contents", _} -> Participant.fetch_contents(data, id)
       {"next question 2", selected} -> Participant.next_question_2(data, id, selected)
       {"next question ans", selected} -> Participant.next_question_ans(data, id, selected)
+      {"finish description", _} -> Participant.finish_description(data, id)
       _ -> {:ok, %{"data" => data}}
     end
     wrap_result(result)

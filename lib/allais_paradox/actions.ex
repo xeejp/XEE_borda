@@ -40,6 +40,11 @@ defmodule AllaisParadox.Actions do
     format(data, nil, participant)
   end
 
+   def finish_description(data, id) do
+    paction = get_action("finish description", %{finish_description_number: data.finish_description_number})
+    format(data, nil, dispatch_to(id, paction))
+  end
+
   def next_question(data, id, selected) do
     paction = get_action("next question", selected)
     haction = get_action("answer", %{id: id, participant: data.participants[id], answered: data.answered})

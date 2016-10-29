@@ -5,6 +5,7 @@ import { handleAction, handleActions } from 'redux-actions'
 
 const reducer = concatenateReducers([
   handleActions({
+    'finish description': (_, { payload: {finish_description_number} }) => ({ finish_description_number: finish_description_number }),
     'update contents': (_, { payload }) => payload,
     'change page': (_, { payload }) => ({ page: payload }),
     'joined': (_, { payload }) => ({ joined: payload }),

@@ -1,11 +1,18 @@
 import { put, take, call, select, fork } from 'redux-saga/effects'
 
-import { fetchContents, nextQuestion } from './actions'
+import { fetchContents, nextQuestion, finishDescription } from './actions'
 
 function* fetchContentsSaga() {
   while (true) {
     yield take(`${fetchContents}`)
     yield call(sendData, 'fetch contents')
+  }
+}
+
+function* finishDescriptionSaga() {
+  while (true) {
+    yield take(`${finishDescription}`)
+    yield call(sendData, 'finish description')
   }
 }
 
@@ -37,6 +44,7 @@ function* nextQuestionSaga() {
 function* saga() {
   yield fork(fetchContentsSaga)
   yield fork(nextQuestionSaga)
+  yield fork(finishDescriptionSaga)
 }
 
 export default saga

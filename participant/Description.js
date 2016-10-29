@@ -8,6 +8,10 @@ import SwipeableViews from 'react-swipeable-views'
 import CircularProgress from 'material-ui/CircularProgress'
 import {Card, CardHeader, CardText} from 'material-ui/Card'
 
+const mapStateToProps = ({ finish_description_number }) => ({
+  finish_description_number,
+})
+
 class Description extends Component {
   constructor(props, context) {
     super(props, context)
@@ -35,12 +39,18 @@ class Description extends Component {
   }
 
   render() {
+    if (this.state.slideIndex == 4) {
+      const {dispatch} = this.props
+      dispatch(finishDescription())
+    }
+    const { finish_description_number } = this.props
     return (
       <div>
         <CardHeader
           title="ボルダルール実験"
           subtitle="ルールの説明終了 "
         />
+        <p>finish_description_number{finish_description_number}</p>
         <CardText>
           <Card style={{marginBottom: "5%"}}>
             <SwipeableViews
