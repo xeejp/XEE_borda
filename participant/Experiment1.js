@@ -54,19 +54,19 @@ class Experiment1 extends Component {
             <div style={{overflow: 'hidden'}}>
               <div>
 
-                <RaisedButton backgroundColor="#64FFDA" onClick={this.ansP.bind(this,1)} style={{ ...buttonStyle}}>
+                <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,1)} style={{ ...buttonStyle}}>
                   <div style={{ ...txtStyle }}>
                     <h5>A1</h5>
                   </div>
                 </RaisedButton>
 
-                <RaisedButton backgroundColor="#64FFDA" onClick={this.ansP.bind(this,2)} style={{ ...buttonStyle }}>
+                <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,2)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
                     <h5>B2</h5>
                   </div>
                 </RaisedButton>
 
-                <RaisedButton backgroundColor="#64FFDA" onClick={this.ansP.bind(this,3)} style={{ ...buttonStyle }}>
+                <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,3)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
                     <h5>A3</h5>
                   </div>
@@ -74,19 +74,19 @@ class Experiment1 extends Component {
               </div>
 
               <div>
-                <RaisedButton backgroundColor="#76FF03" onClick={this.ansQ.bind(this,1)} style={{ ...buttonStyle }}>
+                <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,1)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
                     <h5>B1</h5>
                   </div>
                 </RaisedButton>
 
-                <RaisedButton backgroundColor="#76FF03" onClick={this.ansQ.bind(this,2)} style={{ ...buttonStyle }}>
+                <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,2)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
                     <h5>B2</h5>
                   </div>
                 </RaisedButton>
 
-                <RaisedButton backgroundColor="#76FF03" onClick={this.ansQ.bind(this,3)} style={{ ...buttonStyle }}>
+                <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,3)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
                     <h5>B3</h5>
                   </div>
@@ -101,10 +101,7 @@ class Experiment1 extends Component {
             }}
           />
           <div style={{}}>
-            <h3 style={{float:'left',}}>得点:</h3>
-            <h3 style={{float:'left', color: '#64FFDA'}}>{this.state.p}</h3>
-            <h3 style={{float:'left',}}>+</h3>
-            <h3 style={{float:'left', color: '#76FF03'}}>{this.state.q}</h3>
+            <h3 style={{float:'left',}}>得点</h3>
             <h3 style={{float:'left',}}> = {this.state.p+this.state.q}</h3>
             <RaisedButton onClick={moveEx.bind(this,"experiment2")} style={{ float:'right', top:'100%'}}>次へ</RaisedButton>
             <p style={{clear:'both'}}></p>
