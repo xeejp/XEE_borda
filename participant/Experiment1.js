@@ -25,6 +25,8 @@ const txtStyle = {
   margin: '-1.5em 0 0 -50%',
 }
 
+let buttonValueP = [3,6,9]
+let buttonValueQ = [1,2,3]
 
 class Experiment1 extends Component {
   constructor(props) {
@@ -32,6 +34,18 @@ class Experiment1 extends Component {
     this.state = {
       p:0,
       q:0,
+    }
+    for(let i=buttonValueP.length-1; i>0; i--){
+      let r = Math.floor(Math.random() * (i + 1))
+      let tmp = buttonValueP[i]
+      buttonValueP[i] = buttonValueP[r];
+      buttonValueP[r] = tmp;
+    }
+    for(let i=buttonValueQ.length-1; i>0; i--){
+      let r = Math.floor(Math.random() * (i + 1))
+      let tmp = buttonValueQ[i]
+      buttonValueQ[i] = buttonValueQ[r];
+      buttonValueQ[r] = tmp;
     }
   }
 
@@ -50,8 +64,8 @@ class Experiment1 extends Component {
         <CardTitle title="ボルダルール実験" subtitle="目指せ！最高得点！" />
         <CardText>
 
-            <Card style={{float:'left'}}>
-          <div style={{textAlign:'center'}}>
+          <Card style={{float:'left'}}>
+            <div style={{textAlign:'center'}}>
               <RaisedButton backgroundColor="white" style={{ ...buttonStyle}} disabled={true}>
                 <div style={{ ...txtStyle }}>
                   <h6>Aグループ</h6>
@@ -63,55 +77,55 @@ class Experiment1 extends Component {
                   <h6>Bグループ</h6>
                 </div>
               </RaisedButton>
-          </div>
-            </Card>
+            </div>
+          </Card>
 
-            <Card style={{float:'left'}}>
-          <div style={{textAlign:'center'}}>
-              <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,1)} style={{ ...buttonStyle}}>
+          <Card style={{float:'left'}}>
+            <div style={{textAlign:'center'}}>
+              <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,buttonValueP[0])} style={{ ...buttonStyle}}>
                 <div style={{ ...txtStyle }}>
                   <h5>A1</h5>
                 </div>
               </RaisedButton>
 
-              <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,1)} style={{ ...buttonStyle }}>
+              <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,buttonValueQ[0])} style={{ ...buttonStyle}}>
                 <div style={{ ...txtStyle }}>
                   <h5>B1</h5>
                 </div>
               </RaisedButton>
-          </div>
-            </Card>
+            </div>
+          </Card>
 
-            <Card style={{float:'left'}}>
-          <div style={{textAlign:'center'}}>
-              <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,2)} style={{ ...buttonStyle }}>
+          <Card style={{float:'left'}}>
+            <div style={{textAlign:'center'}}>
+              <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,buttonValueP[1])} style={{ ...buttonStyle}}>
                 <div style={{ ...txtStyle }}>
                   <h5>A2</h5>
                 </div>
               </RaisedButton>
 
-              <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,2)} style={{ ...buttonStyle }}>
+              <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,buttonValueQ[1])} style={{ ...buttonStyle}}>
                 <div style={{ ...txtStyle }}>
                   <h5>B2</h5>
                 </div>
               </RaisedButton>
-          </div>
-            </Card>
+            </div>
+          </Card>
 
-            <Card style={{float:'left'}}>
-          <div style={{textAlign:'center'}}>
-              <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,3)} style={{ ...buttonStyle }}>
+          <Card style={{float:'left'}}>
+            <div style={{textAlign:'center'}}>
+              <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,buttonValueP[2])} style={{ ...buttonStyle}}>
                 <div style={{ ...txtStyle }}>
                   <h5>A3</h5>
                 </div>
               </RaisedButton>
-              <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,3)} style={{ ...buttonStyle }}>
+              <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,buttonValueQ[2])} style={{ ...buttonStyle}}>
                 <div style={{ ...txtStyle }}>
                   <h5>B3</h5>
                 </div>
               </RaisedButton>
-          </div>
-            </Card>
+            </div>
+          </Card>
 
           <div style={{clear:'both'}}>
             <h3 style={{float:'left',}}>得点</h3>
