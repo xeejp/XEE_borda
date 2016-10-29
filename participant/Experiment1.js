@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 import RaisedButton from 'material-ui/RaisedButton'
 import SwipeableViews from 'react-swipeable-views'
 import {Card, CardText, CardTitle } from 'material-ui/Card'
@@ -12,10 +11,10 @@ const mapStateToProps = ({}) => ({
 })
 
 const buttonStyle = {
-  width: '30%',
+  width: '20%',
   height: '100px',
   position: 'relative',
-  margin: '1%',
+  margin: '2%',
 }
 
 const txtStyle = {
@@ -50,60 +49,74 @@ class Experiment1 extends Component {
       <Card>
         <CardTitle title="ボルダルール実験" subtitle="目指せ！最高得点！" />
         <CardText>
-          <div style={{height: 'auto'}}>
-            <div style={{overflow: 'hidden'}}>
-              <div>
 
-                <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,1)} style={{ ...buttonStyle}}>
-                  <div style={{ ...txtStyle }}>
-                    <h5>A1</h5>
-                  </div>
-                </RaisedButton>
+            <Card style={{float:'left'}}>
+          <div style={{textAlign:'center'}}>
+              <RaisedButton backgroundColor="white" style={{ ...buttonStyle}} disabled={true}>
+                <div style={{ ...txtStyle }}>
+                  <h6>Aグループ</h6>
+                </div>
+              </RaisedButton>
 
-                <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,2)} style={{ ...buttonStyle }}>
-                  <div style={{ ...txtStyle }}>
-                    <h5>B2</h5>
-                  </div>
-                </RaisedButton>
-
-                <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,3)} style={{ ...buttonStyle }}>
-                  <div style={{ ...txtStyle }}>
-                    <h5>A3</h5>
-                  </div>
-                </RaisedButton>
-              </div>
-
-              <div>
-                <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,1)} style={{ ...buttonStyle }}>
-                  <div style={{ ...txtStyle }}>
-                    <h5>B1</h5>
-                  </div>
-                </RaisedButton>
-
-                <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,2)} style={{ ...buttonStyle }}>
-                  <div style={{ ...txtStyle }}>
-                    <h5>B2</h5>
-                  </div>
-                </RaisedButton>
-
-                <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,3)} style={{ ...buttonStyle }}>
-                  <div style={{ ...txtStyle }}>
-                    <h5>B3</h5>
-                  </div>
-                </RaisedButton>
-              </div>
-            </div>
+              <RaisedButton backgroundColor="white" style={{ ...buttonStyle}} disabled={true}>
+                <div style={{ ...txtStyle }}>
+                  <h6>Bグループ</h6>
+                </div>
+              </RaisedButton>
           </div>
-          <Divider
-            style={{
-              marginTop: "5%",
-              marginBottom: "5%"
-            }}
-          />
-          <div style={{}}>
+            </Card>
+
+            <Card style={{float:'left'}}>
+          <div style={{textAlign:'center'}}>
+              <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,1)} style={{ ...buttonStyle}}>
+                <div style={{ ...txtStyle }}>
+                  <h5>A1</h5>
+                </div>
+              </RaisedButton>
+
+              <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,1)} style={{ ...buttonStyle }}>
+                <div style={{ ...txtStyle }}>
+                  <h5>B1</h5>
+                </div>
+              </RaisedButton>
+          </div>
+            </Card>
+
+            <Card style={{float:'left'}}>
+          <div style={{textAlign:'center'}}>
+              <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,2)} style={{ ...buttonStyle }}>
+                <div style={{ ...txtStyle }}>
+                  <h5>A2</h5>
+                </div>
+              </RaisedButton>
+
+              <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,2)} style={{ ...buttonStyle }}>
+                <div style={{ ...txtStyle }}>
+                  <h5>B2</h5>
+                </div>
+              </RaisedButton>
+          </div>
+            </Card>
+
+            <Card style={{float:'left'}}>
+          <div style={{textAlign:'center'}}>
+              <RaisedButton backgroundColor="white" onClick={this.ansP.bind(this,3)} style={{ ...buttonStyle }}>
+                <div style={{ ...txtStyle }}>
+                  <h5>A3</h5>
+                </div>
+              </RaisedButton>
+              <RaisedButton backgroundColor="white" onClick={this.ansQ.bind(this,3)} style={{ ...buttonStyle }}>
+                <div style={{ ...txtStyle }}>
+                  <h5>B3</h5>
+                </div>
+              </RaisedButton>
+          </div>
+            </Card>
+
+          <div style={{clear:'both'}}>
             <h3 style={{float:'left',}}>得点</h3>
-            <h3 style={{float:'left',}}> = {this.state.p+this.state.q}</h3>
-            <RaisedButton onClick={moveEx.bind(this,"experiment2")} style={{ float:'right', top:'100%'}}>次へ</RaisedButton>
+            <h3 style={{float:'left',}}> : {this.state.p+this.state.q}</h3>
+            <RaisedButton onClick={moveEx.bind(this,"experiment2")} style={{ float:'right', margin:'5%'}}>次へ</RaisedButton>
             <p style={{clear:'both'}}></p>
           </div>
       </CardText></Card>
