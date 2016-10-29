@@ -9,7 +9,6 @@ import Slider from 'material-ui/Slider'
 const mapStateToProps = ({}) => ({
 })
 
-const axis = ["P-A","P-B","P-C","Q-A","Q-B","Q-C"]
 let slideResult = [0,0,0,0,0,0]
 
 class Experiment2 extends Component {
@@ -83,7 +82,7 @@ class Experiment2 extends Component {
       <div>
         <Card>
           <CardTitle title="ボルダルール実験" subtitle="5段階評価" />
-          <div  style={{marginBottom: "5%", padding:"5%"}}>
+          <div  style={{ padding:"5%"}}>
             <Card>
               <SwipeableViews
                 index={this.state.slideIndex}
@@ -91,172 +90,145 @@ class Experiment2 extends Component {
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>1/6</p>
                   <Slider
-                    style={{padding:"5%"}}
+                    style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
                     max={5}
                     step={1}
                     defaultValue={slideResult[0]} 
                     onChange={this.handleSlider1}
                   />
-                  <p>this.state.sliderValue:{this.state.sliderValue1}</p>
-                  <p>slideResult:
-                    {this.state.sliderValue1},
-                    {this.state.sliderValue2},
-                    {this.state.sliderValue3},
-                    {this.state.sliderValue4},
-                    {this.state.sliderValue5},
-                    {this.state.sliderValue6}
-                  </p>
+                  <div style={{ padding:"5%"}}>
+                    <RaisedButton backgroundColor="#64FFDA" label="A"/>
+                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue1}</h4>
+                  </div>
                 </div>
+
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>2/6</p>
                   <Slider
-                    style={{padding:"5%"}}
+                    style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
                     max={5}
                     step={1}
                     defaultValue={slideResult[1]} 
                     onChange={this.handleSlider2}
                   />
-                  <p>this.state.sliderValue:{this.state.sliderValue2}</p>
-                  <p>slideResult:
-                    {this.state.sliderValue1},
-                    {this.state.sliderValue2},
-                    {this.state.sliderValue3},
-                    {this.state.sliderValue4},
-                    {this.state.sliderValue5},
-                    {this.state.sliderValue6}
-                  </p>
+                  <div style={{ padding:"5%"}}>
+                    <RaisedButton backgroundColor="#64FFDA" label="B"/>
+                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue2}</h4>
+                  </div>
                 </div>
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>3/6</p>
                   <Slider
-                    style={{padding:"5%"}}
+                    style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
                     max={5}
                     step={1}
                     defaultValue={slideResult[2]} 
                     onChange={this.handleSlider3}
                   />
-                  <p>this.state.sliderValue:{this.state.sliderValue3}</p>
-                  <p>slideResult:
-                    {this.state.sliderValue1},
-                    {this.state.sliderValue2},
-                    {this.state.sliderValue3},
-                    {this.state.sliderValue4},
-                    {this.state.sliderValue5},
-                    {this.state.sliderValue6}
-                  </p>
+                  <div style={{ padding:"5%"}}>
+                    <RaisedButton backgroundColor="#64FFDA" label="C"/>
+                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue3}</h4>
+                  </div>
                 </div>
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>4/6</p>
                   <Slider
-                    style={{padding:"5%"}}
+                    style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
                     max={5}
                     step={1}
                     defaultValue={slideResult[3]} 
                     onChange={this.handleSlider4}
                   />
-                  <p>this.state.sliderValue:{this.state.sliderValue4}</p>
-                  <p>slideResult:
-                    {this.state.sliderValue1},
-                    {this.state.sliderValue2},
-                    {this.state.sliderValue3},
-                    {this.state.sliderValue4},
-                    {this.state.sliderValue5},
-                    {this.state.sliderValue6}
-                  </p>
+                  <div style={{ padding:"5%"}}>
+                    <RaisedButton backgroundColor="#76FF03" label="A"/>
+                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue4}</h4>
+                  </div>
                 </div>
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>5/6</p>
                   <Slider
-                    style={{padding:"5%"}}
+                    style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
                     max={5}
                     step={1}
                     defaultValue={slideResult[4]} 
                     onChange={this.handleSlider5}
                   />
-                  <p>this.state.sliderValue:{this.state.sliderValue5}</p>
-                  <p>slideResult:
-                    {this.state.sliderValue1},
-                    {this.state.sliderValue2},
-                    {this.state.sliderValue3},
-                    {this.state.sliderValue4},
-                    {this.state.sliderValue5},
-                    {this.state.sliderValue6}
-                  </p>
+                  <div style={{ padding:"5%"}}>
+                    <RaisedButton backgroundColor="#76FF03" label="B"/>
+                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue5}</h4>
+                  </div>
                 </div>
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>6/6</p>
                   <Slider
-                    style={{padding:"5%"}}
+                    style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
                     max={5}
                     step={1}
                     defaultValue={slideResult[5]} 
                     onChange={this.handleSlider6}
                   />
-                  <p>this.state.sliderValue:{this.state.sliderValue6}</p>
-                  <p>slideResult:
-                    {this.state.sliderValue1},
-                    {this.state.sliderValue2},
-                    {this.state.sliderValue3},
-                    {this.state.sliderValue4},
-                    {this.state.sliderValue5},
-                    {this.state.sliderValue6}
-                  </p>
+                  <div style={{ padding:"5%"}}>
+                    <RaisedButton backgroundColor="#76FF03" label="C"/>
+                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue6}</h4>
+                  </div>
                 </div>
 
                 <div style={{ marginLeft: "2%"}}>
                   <p>5段階評価が終了しました。</p>
                   <p>左下の「次へ」をクリックしてください。</p><br />
                   <p>並び替え評価に遷移します。</p>
+
                 </div>
               </SwipeableViews>
-            </Card>
-          </div>
-          <div  style={{margin: "5%", padding:"5%"}}>
-            {this.state.slideIndex == 6 ?
-              <RaisedButton 
-                label="次へ"
-                onClick={this.finish.bind(this,
-                  this.state.sliderValue1,
-                  this.state.sliderValue2,
-                  this.state.sliderValue3,
-                  this.state.sliderValue4,
-                  this.state.sliderValue5,
-                  this.state.sliderValue6,
-                )}
-                style={{ float:'left'}}
+
+              <div style={{ margin:"2%"}}>
+                {this.state.slideIndex == 6 ?
+                  <RaisedButton 
+                    label="次へ"
+                    onClick={this.finish.bind(this,
+                      this.state.sliderValue1,
+                      this.state.sliderValue2,
+                      this.state.sliderValue3,
+                      this.state.sliderValue4,
+                      this.state.sliderValue5,
+                      this.state.sliderValue6,
+                    )}
+                    style={{ float:'left'}}
+                    primary={true}
+                  />
+                  : null
+                }
+
+                <RaisedButton
+                  label="進む"
+                  style={{float: "right"}}
+                  onTouchTap={this.handleNext.bind(this)}
+                  primary={true}
+                  disabled={this.state.slideIndex == 6}
+                />
+
+              <RaisedButton
+                label="戻る"
+                style={{float: "right"}}
+                onTouchTap={this.handleBack.bind(this)}
+                disabled={this.state.slideIndex == 0}
               />
-              : null
-            }
+            </div>
 
-            <RaisedButton
-              label="進む"
-              style={{float: "right"}}
-              onTouchTap={this.handleNext.bind(this)}
-              primary={true}
-              disabled={this.state.slideIndex == 6}
-            />
-
-          <RaisedButton
-            label="戻る"
-            style={{float: "right"}}
-            onTouchTap={this.handleBack.bind(this)}
-            disabled={this.state.slideIndex == 0}
-          />
+          </Card>
         </div>
-
-
       </Card>
-    </div>
+      </div>
     )
   }
 }
