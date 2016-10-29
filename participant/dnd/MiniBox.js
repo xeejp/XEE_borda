@@ -32,6 +32,7 @@ class MiniBox extends Component{
 			index, 
 			id, 
 			text, 
+      pageCounter,
 			dragDropCard, 
 			isHover, 
 			isOver, 
@@ -48,6 +49,7 @@ class MiniBox extends Component{
 				key={key}
 				index={index} 
 				text={text}
+        pageCounter={pageCounter}
 				dragDropCard={dragDropCard}
 				/>
 				</div>
@@ -61,6 +63,7 @@ class MiniBox extends Component{
 				key={key}
 				index={index} 
 				text={text}
+        pageCounter={pageCounter}
 				dragDropCard={dragDropCard}
 				/>
 				</div>
@@ -74,6 +77,7 @@ class MiniBox extends Component{
 				key={key}
 				index={index} 
 				text={text}
+        pageCounter={pageCounter}
 				dragDropCard={dragDropCard}
 				/>
 				</div>
