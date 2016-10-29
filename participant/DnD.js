@@ -47,6 +47,7 @@ class App extends Component {
     console.log(JSON.stringify(array));
     data.splice(dragIndex,1);
     this.setState(data);
+    console.log(JSON.stringify(data));
   }
 
   dragDropCard(dragIndex, hoverIndex) {
@@ -116,7 +117,7 @@ class App extends Component {
                   />)}
                 </Box>
               </Card>
-              <Button next={this.next} array={array}/>
+              <Button next={this.next} array={array} data={data.length}/>
             </div>
             <div style={{ float: 'right', marginRight: '10%'}}>
               <Card>
