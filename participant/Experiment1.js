@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import RaisedButton from 'material-ui/RaisedButton'
+import FlatButton from 'material-ui/FlatButton'
 import SwipeableViews from 'react-swipeable-views'
 import {Card, CardText, CardTitle } from 'material-ui/Card'
 import Divider from 'material-ui/Divider'
@@ -35,6 +36,7 @@ let isClickA3 = false
 let isClickB3 = false
 let disabledA = false
 let disabledB = false
+let isPrintValue = false
 
 class Experiment1 extends Component {
   constructor(props) {
@@ -89,6 +91,13 @@ class Experiment1 extends Component {
       isClickB3 = true
     }
     this.setState({q: value})
+  }
+
+  printValue(){
+    isPrintValue = true
+    this.setState(txtStyle)
+    console.log("printvalue")
+    console.log(isPrintValue)
   }
 
   render() {
@@ -160,14 +169,25 @@ class Experiment1 extends Component {
               </RaisedButton>
             </div>
           </Card>
+          <div style={{clear:'both'}}/>
 
-          <div style={{clear:'both'}}>
+          <RaisedButton
+            onClick={this.printValue.bind(this)}
+            label="ポイント表示"
+            primary="true"
+            disabled={!(disabledA && disabledB)}
+          />
+          {isPrintValue?
+          (<div>
             <h3 style={{float:'left',}}>得点</h3>
             <h3 style={{float:'left',}}> : {this.state.p+this.state.q}</h3>
-            <RaisedButton onClick={moveEx.bind(this,"experiment2")} style={{ float:'right', margin:'5%'}}>次へ</RaisedButton>
             <p style={{clear:'both'}}></p>
-          </div>
-      </CardText></Card>
+          </div>)
+            :null
+          }
+      </CardText>
+      <FlatButton onClick={moveEx.bind(this,"experiment2")} style={{ float:'right', margin:'5%'}}>次へ</FlatButton>
+      </Card>
     )
   }
 }
