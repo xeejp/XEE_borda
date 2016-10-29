@@ -112,6 +112,7 @@ class App extends Component {
                     index={i} 
                     id={dt[0]} 
                     text={dt[1]}
+                    pageCounter={pageCounter}
                     dragDropCard={this.dragDropCard}
                     dragCard={this.dragCard}
                   />)}
@@ -128,6 +129,7 @@ class App extends Component {
                       index={i}
                       id={card[0]}
                       text={card[1]}
+                      pageCounter={pageCounter}
                     />
                   );
                 })}

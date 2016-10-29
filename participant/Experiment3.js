@@ -25,7 +25,7 @@ class Experiment2 extends Component {
   }
   dataBarn(array) {
     DnDResult[Num] = new Array()
-    DnDResult[Num] = array
+    DnDResult[Num] = JSON.parse(JSON.stringify(array))
     if(Num < EvaluationAxis.length + 1 ){
       this.setState(DnDResult)
     }

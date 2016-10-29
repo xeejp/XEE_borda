@@ -80,10 +80,11 @@ class DroppedCard extends Component{
 	}
 
 	render(){
-		const { flag, text, index, isDragging, connectDragSource, connectDropTarget } = this.props;
+		const { flag, text, index, pageCounter, isDragging, connectDragSource, connectDropTarget } = this.props;
 		const opacity = isDragging ? 0 : 1;
 		const no = index+1;
 		const title="No."+no+" "+text;
+    const axisText={'P': '青のボタン', 'Q': '緑のボタン'}
 
 		if( flag == false ){
 			return connectDragSource(connectDropTarget(
@@ -94,10 +95,10 @@ class DroppedCard extends Component{
 		}
 		else{
 			return connectDragSource(connectDropTarget(
-				<div style={{ ...cardStyle ,opacity}}>
-				<Card>
+        <div style={{ ...cardStyle ,opacity}}>
+				<Card style={{backgroundColor: (pageCounter == 0)?'#64FFDA':(pageCounter == 1)?'#76FF03':(text == "P")?'#64FFDA':'#76FF03'}}>
 				<CardHeader
-				title={title}
+				title={(pageCounter == 2)? axisText[text] : title}
 				/>
 				</Card>
 				</div>

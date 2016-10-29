@@ -5,7 +5,7 @@ import { DragSource } from 'react-dnd'
 
 const style = {
 	padding: '0.5rem 1rem',
-	marginBottom: '.5rem',
+	margin: '0.5rem',
 }
 
 const mapStateToProps = ()=> {
@@ -35,15 +35,15 @@ function dragCollect(connect, monitor){
 class FirstCard extends Component{
 	render(){
 		const { isDragging, connectDragSource } = this.props;
-		const { text } = this.props;
+		const { text, pageCounter,index } = this.props;
 		const opacity = isDragging ? 0.4 : 1;
-
+    const axisText={'P': '青のボタン', 'Q': '緑のボタン'}
 		return (
 			connectDragSource(
 				<div style={{ ...style, opacity }}>
-				<Card>
+				<Card style={{ backgroundColor: (pageCounter == 0)?'#64FFDA':(pageCounter == 1)?'#76FF03':(text == "P")?'#64FFDA':'#76FF03' }}>
 				<CardHeader
-					title={text}
+					title={(pageCounter == 2)? axisText[text] : text}
 				/>
 				</Card>
 				</div>
@@ -51,7 +51,6 @@ class FirstCard extends Component{
 		);
 	}
 }
-
 Card.propTypes = {
 	connectDragSource: PropTypes.func.isRequired,
 	isDragging: PropTypes.bool.isRequired,

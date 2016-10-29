@@ -56,19 +56,19 @@ class Experiment1 extends Component {
 
                 <RaisedButton backgroundColor="#64FFDA" onClick={this.ansP.bind(this,1)} style={{ ...buttonStyle}}>
                   <div style={{ ...txtStyle }}>
-                    <h5>A</h5>
+                    <h5>A1</h5>
                   </div>
                 </RaisedButton>
 
                 <RaisedButton backgroundColor="#64FFDA" onClick={this.ansP.bind(this,2)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
-                    <h5>B</h5>
+                    <h5>B2</h5>
                   </div>
                 </RaisedButton>
 
                 <RaisedButton backgroundColor="#64FFDA" onClick={this.ansP.bind(this,3)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
-                    <h5>C</h5>
+                    <h5>A3</h5>
                   </div>
                 </RaisedButton>
               </div>
@@ -76,19 +76,19 @@ class Experiment1 extends Component {
               <div>
                 <RaisedButton backgroundColor="#76FF03" onClick={this.ansQ.bind(this,1)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
-                    <h5>A</h5>
+                    <h5>B1</h5>
                   </div>
                 </RaisedButton>
 
                 <RaisedButton backgroundColor="#76FF03" onClick={this.ansQ.bind(this,2)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
-                    <h5>B</h5>
+                    <h5>B2</h5>
                   </div>
                 </RaisedButton>
 
                 <RaisedButton backgroundColor="#76FF03" onClick={this.ansQ.bind(this,3)} style={{ ...buttonStyle }}>
                   <div style={{ ...txtStyle }}>
-                    <h5>C</h5>
+                    <h5>B3</h5>
                   </div>
                 </RaisedButton>
               </div>
