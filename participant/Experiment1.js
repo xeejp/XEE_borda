@@ -36,7 +36,8 @@ let isClickA3 = false
 let isClickB3 = false
 let disabledA = false
 let disabledB = false
-let isPrintValue = false
+let handleClickPrintValue = true
+let handleClickReTry = false
 
 class Experiment1 extends Component {
   constructor(props) {
@@ -94,12 +95,25 @@ class Experiment1 extends Component {
   }
 
   printValue(){
-    isPrintValue = true
+    handleClickPrintValue = false
+    handleClickReTry = true
     this.setState(txtStyle)
     console.log("printvalue")
-    console.log(isPrintValue)
   }
 
+  reTry(){
+    handleClickReTry = false 
+    handleClickPrintValue = true 
+    isClickA1 = false
+    isClickB1 = false
+    isClickA2 = false
+    isClickB2 = false
+    isClickA3 = false
+    isClickB3 = false
+    disabledA = false
+    disabledB = false
+    this.setState(txtStyle)
+  }
   render() {
     const { moveEx } = this.props
     return (
@@ -171,22 +185,31 @@ class Experiment1 extends Component {
           </Card>
           <div style={{clear:'both'}}/>
 
-          <RaisedButton
-            onClick={this.printValue.bind(this)}
-            label="ポイント表示"
-            primary="true"
-            disabled={!(disabledA && disabledB)}
-          />
-          {isPrintValue?
-          (<div>
-            <h3 style={{float:'left',}}>得点</h3>
-            <h3 style={{float:'left',}}> : {this.state.p+this.state.q}</h3>
-            <p style={{clear:'both'}}></p>
-          </div>)
+          {handleClickPrintValue?
+            (<RaisedButton
+              onClick={this.printValue.bind(this)}
+              label="ポイント表示"
+              primary="true"
+              disabled={!(disabledA && disabledB)}
+              style={{marginLeft: '3%', marginTop: '3%'}}
+            />)
+            :(<RaisedButton
+              onClick={this.reTry.bind(this)}
+              label="再挑戦"
+              backgroundColor="#76FF03"
+              style={{marginLeft: '3%', marginTop: '3%'}}
+            />)
+          }
+          {handleClickReTry?
+            (<div>
+              <h3 style={{float:'left',}}>得点</h3>
+              <h3 style={{float:'left',}}> : {this.state.p+this.state.q}</h3>
+              <p style={{clear:'both'}}></p>
+            </div>)
             :null
           }
-      </CardText>
-      <FlatButton onClick={moveEx.bind(this,"experiment2")} style={{ float:'right', margin:'5%'}}>次へ</FlatButton>
+        </CardText>
+        <FlatButton onClick={moveEx.bind(this,"experiment2")} style={{ float:'right', margin:'5%'}}>次へ</FlatButton>
       </Card>
     )
   }
