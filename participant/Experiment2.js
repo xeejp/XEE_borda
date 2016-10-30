@@ -101,7 +101,7 @@ class Experiment2 extends Component {
               >
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>1/6</p>
-                  <div style={{marginLeft:"10%"}}>
+                  <div style={{textAlign: "center"}}>
                   <p>5 最も大きな影響力がある</p>
               <p>4 比較的大きな影響力がある</p>
               <p>3 平均的な大きさの影響力がある</p>
@@ -123,7 +123,7 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>2/6</p>
-                  <div style={{marginLeft:"10%"}}>
+                  <div style={{textAlign: "center"}}>
                   <p>5 最も大きな影響力がある</p>
               <p>4 比較的大きな影響力がある</p>
               <p>3 平均的な大きさの影響力がある</p>
@@ -145,7 +145,7 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>3/6</p>
-               <div style={{marginLeft:"10%"}}>
+                  <div style={{textAlign: "center"}}>
                   <p>5 最も大きな影響力がある</p>
               <p>4 比較的大きな影響力がある</p>
               <p>3 平均的な大きさの影響力がある</p>
@@ -167,7 +167,7 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>4/6</p>
-                 <div style={{marginLeft:"10%"}}>
+                  <div style={{textAlign: "center"}}>
                   <p>5 最も大きな影響力がある</p>
               <p>4 比較的大きな影響力がある</p>
               <p>3 平均的な大きさの影響力がある</p>
@@ -189,7 +189,7 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>5/6</p>
-                 <div style={{marginLeft:"10%"}}>
+                  <div style={{textAlign: "center"}}>
                   <p>5 最も大きな影響力がある</p>
               <p>4 比較的大きな影響力がある</p>
               <p>3 平均的な大きさの影響力がある</p>
@@ -211,7 +211,7 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>6/6</p>
-                 <div style={{marginLeft:"10%"}}>
+                  <div style={{textAlign: "center"}}>
                   <p>5 最も大きな影響力がある</p>
               <p>4 比較的大きな影響力がある</p>
               <p>3 平均的な大きさの影響力がある</p>
