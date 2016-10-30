@@ -39,7 +39,7 @@ class Description extends Component {
       <div>
         <CardHeader
           title="ボルダルール実験"
-          subtitle="ルールの説明終了 "
+          subtitle="ルールの説明 "
         />
         <CardText>
           <Card style={{marginBottom: "5%"}}>

@@ -98,8 +98,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider1}
                   />
                   <div style={{ padding:"5%"}}>
-                    <RaisedButton backgroundColor="#64FFDA" label="A"/>
-                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue1}</h4>
+                    <h4>ボタンA1がポイントに与える影響力は５段階評価で{this.state.sliderValue1}</h4>
                   </div>
                 </div>
 
@@ -114,8 +113,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider2}
                   />
                   <div style={{ padding:"5%"}}>
-                    <RaisedButton backgroundColor="#64FFDA" label="B"/>
-                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue2}</h4>
+                    <h4>ボタンA2がポイントに与える影響力は５段階評価で{this.state.sliderValue2}</h4>
                   </div>
                 </div>
 
@@ -130,8 +128,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider3}
                   />
                   <div style={{ padding:"5%"}}>
-                    <RaisedButton backgroundColor="#64FFDA" label="C"/>
-                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue3}</h4>
+                    <h4>ボタンA3がポイントに与える影響力は５段階評価で{this.state.sliderValue3}</h4>
                   </div>
                 </div>
 
@@ -146,8 +143,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider4}
                   />
                   <div style={{ padding:"5%"}}>
-                    <RaisedButton backgroundColor="#76FF03" label="A"/>
-                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue4}</h4>
+                    <h4>ボタンB1がポイントに与える影響力は５段階評価で{this.state.sliderValue4}</h4>
                   </div>
                 </div>
 
@@ -162,8 +158,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider5}
                   />
                   <div style={{ padding:"5%"}}>
-                    <RaisedButton backgroundColor="#76FF03" label="B"/>
-                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue5}</h4>
+                    <h4>ボタンB2がポイントに与える影響力は５段階評価で{this.state.sliderValue5}</h4>
                   </div>
                 </div>
 
@@ -178,8 +173,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider6}
                   />
                   <div style={{ padding:"5%"}}>
-                    <RaisedButton backgroundColor="#76FF03" label="C"/>
-                    <h4>このボタンがポイントに与える影響力は５段階評価で{this.state.sliderValue6}</h4>
+                    <h4>ボタンB3がポイントに与える影響力は５段階評価で{this.state.sliderValue6}</h4>
                   </div>
                 </div>
 
