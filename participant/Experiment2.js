@@ -6,10 +6,17 @@ import RaisedButton from 'material-ui/RaisedButton'
 import {Card, CardText, CardTitle } from 'material-ui/Card'
 import Slider from 'material-ui/Slider'
 
-const mapStateToProps = ({}) => ({
+const mapStateToProps = ({joinedNumber}) => ({
+  joinedNumber
 })
 
 let slideResult = [0,0,0,0,0,0]
+let moveSlider1 = false
+let moveSlider2 = false
+let moveSlider3 = false
+let moveSlider4 = false
+let moveSlider5 = false
+let moveSlider6 = false
 
 class Experiment2 extends Component {
   constructor(props) {
@@ -26,26 +33,32 @@ class Experiment2 extends Component {
   }
 
   handleSlider1 = (event, value) => {
+    moveSlider1 = true;
     this.setState({sliderValue1: value});
   }
 
   handleSlider2 = (event, value) => {
+    moveSlider2 = true;
     this.setState({sliderValue2: value});
   }
 
   handleSlider3 = (event, value) => {
+    moveSlider3 = true;
     this.setState({sliderValue3: value});
   }
 
   handleSlider4 = (event, value) => {
+    moveSlider4 = true;
     this.setState({sliderValue4: value});
   }
 
   handleSlider5 = (event, value) => {
+    moveSlider5 = true;
     this.setState({sliderValue5: value});
   }
 
   handleSlider6 = (event, value) => {
+    moveSlider6 = true;
     this.setState({sliderValue6: value});
   }
 
@@ -74,7 +87,7 @@ class Experiment2 extends Component {
   }
 
   render() {
-    const { moveEx } = this.props
+    const { moveEx ,joinedNumber} = this.props
 
     return(
       <div>
@@ -90,9 +103,9 @@ class Experiment2 extends Component {
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
-                    max={5}
+                    max={6}
                     step={1}
-                    defaultValue={slideResult[0]} 
+                    defaultValue={moveSlider1?slideResult[0]:((joinedNumber+1)%2 == 0)?6:0} 
                     onChange={this.handleSlider1}
                   />
                   <div style={{ padding:"5%"}}>
@@ -105,9 +118,9 @@ class Experiment2 extends Component {
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
-                    max={5}
+                    max={6}
                     step={1}
-                    defaultValue={slideResult[1]} 
+                    defaultValue={moveSlider2?slideResult[1]:((joinedNumber+1)%2 == 0)?6:0}  
                     onChange={this.handleSlider2}
                   />
                   <div style={{ padding:"5%"}}>
@@ -120,9 +133,9 @@ class Experiment2 extends Component {
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
-                    max={5}
+                    max={6}
                     step={1}
-                    defaultValue={slideResult[2]} 
+                   defaultValue={moveSlider3?slideResult[2]:((joinedNumber+1)%2 == 0)?6:0} 
                     onChange={this.handleSlider3}
                   />
                   <div style={{ padding:"5%"}}>
@@ -135,9 +148,9 @@ class Experiment2 extends Component {
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
-                    max={5}
+                    max={6}
                     step={1}
-                    defaultValue={slideResult[3]} 
+                    defaultValue={moveSlider4?slideResult[3]:((joinedNumber+1)%2 == 0)?6:0}  
                     onChange={this.handleSlider4}
                   />
                   <div style={{ padding:"5%"}}>
@@ -150,9 +163,9 @@ class Experiment2 extends Component {
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
-                    max={5}
+                    max={6}
                     step={1}
-                    defaultValue={slideResult[4]} 
+                    defaultValue={moveSlider5?slideResult[4]:((joinedNumber+1)%2 == 0)?6:0} 
                     onChange={this.handleSlider5}
                   />
                   <div style={{ padding:"5%"}}>
@@ -165,9 +178,9 @@ class Experiment2 extends Component {
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
-                    max={5}
+                    max={6}
                     step={1}
-                    defaultValue={slideResult[5]} 
+                   defaultValue={moveSlider6?slideResult[5]:((joinedNumber+1)%2 == 0)?6:0} 
                     onChange={this.handleSlider6}
                   />
                   <div style={{ padding:"5%"}}>
