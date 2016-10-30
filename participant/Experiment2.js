@@ -95,11 +95,19 @@ class Experiment2 extends Component {
           <CardTitle title="ボルダルール実験" subtitle="5段階評価" />
           <div  style={{ padding:"5%"}}>
             <Card>
+              
               <SwipeableViews
                 index={this.state.slideIndex}
               >
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>1/6</p>
+                  <div style={{marginLeft:"10%"}}>
+                  <p>5 最も大きな影響力がある</p>
+              <p>4 比較的大きな影響力がある</p>
+              <p>3 平均的な大きさの影響力がある</p>
+              <p>2 影響力が比較的小さい</p>
+              <p>1 影響力が最も小さい</p>
+            </div>
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
@@ -115,6 +123,13 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>2/6</p>
+                  <div style={{marginLeft:"10%"}}>
+                  <p>5 最も大きな影響力がある</p>
+              <p>4 比較的大きな影響力がある</p>
+              <p>3 平均的な大きさの影響力がある</p>
+              <p>2 影響力が比較的小さい</p>
+              <p>1 影響力が最も小さい</p>
+            </div>
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
@@ -130,6 +145,13 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>3/6</p>
+               <div style={{marginLeft:"10%"}}>
+                  <p>5 最も大きな影響力がある</p>
+              <p>4 比較的大きな影響力がある</p>
+              <p>3 平均的な大きさの影響力がある</p>
+              <p>2 影響力が比較的小さい</p>
+              <p>1 影響力が最も小さい</p>
+            </div>
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
@@ -145,6 +167,13 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>4/6</p>
+                 <div style={{marginLeft:"10%"}}>
+                  <p>5 最も大きな影響力がある</p>
+              <p>4 比較的大きな影響力がある</p>
+              <p>3 平均的な大きさの影響力がある</p>
+              <p>2 影響力が比較的小さい</p>
+              <p>1 影響力が最も小さい</p>
+            </div>
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
@@ -160,6 +189,13 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>5/6</p>
+                 <div style={{marginLeft:"10%"}}>
+                  <p>5 最も大きな影響力がある</p>
+              <p>4 比較的大きな影響力がある</p>
+              <p>3 平均的な大きさの影響力がある</p>
+              <p>2 影響力が比較的小さい</p>
+              <p>1 影響力が最も小さい</p>
+            </div>
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
@@ -175,6 +211,13 @@ class Experiment2 extends Component {
 
                 <div style={{overflow: 'hidden'}}>
                   <p style={{ marginLeft: "2%"}}>6/6</p>
+                 <div style={{marginLeft:"10%"}}>
+                  <p>5 最も大きな影響力がある</p>
+              <p>4 比較的大きな影響力がある</p>
+              <p>3 平均的な大きさの影響力がある</p>
+              <p>2 影響力が比較的小さい</p>
+              <p>1 影響力が最も小さい</p>
+            </div>
                   <Slider
                     style={{marginLeft:"10%", marginRight:"10%"}}
                     min={0}
