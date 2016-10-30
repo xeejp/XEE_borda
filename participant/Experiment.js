@@ -23,6 +23,7 @@ const actionCreators = {
 let ex="experiment1"
 let result = new Object()
 let manyTypeDataCall = 0
+let game = new Array()
 const dt = [1,2]
 
 class Experiment extends Component {
@@ -40,17 +41,19 @@ class Experiment extends Component {
 
   manyTypeData(fromData, dtArray){
     result[fromData] = dtArray 
-    console.log("kannsu now")
-    this.props.nextQuestion(dtArray)
+
+    if(fromData == "game"){
+      game = JSON.parse(JSON.stringify(dtArray))
+    }
 
     if(fromData == "5axis"){
-    console.log("if now")
+      this.props.nextQuestion(JSON.parse(JSON.stringify(game.concat(dtArray))))
       ex = "experiment3"
       this.setState(dt)
-      console.log("this.setState")
     }
     
     if(fromData == "dnd"){
+      this.props.nextQuestion(JSON.parse(JSON.stringify(dtArray)))
     }
 
   }
@@ -62,6 +65,7 @@ class Experiment extends Component {
           <div>
             <Experiment1 
               moveEx={this.moveEx}
+              manyTypeData = {this.manyTypeData}
             />
           </div>
         )

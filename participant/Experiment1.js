@@ -58,8 +58,6 @@ class Experiment1 extends Component {
       buttonValueQ[i] = buttonValueQ[r];
       buttonValueQ[r] = tmp;
     }
-    console.log(JSON.stringify(buttonValueP))
-    console.log(JSON.stringify(buttonValueQ))
   }
 
   ansP(value, whichButton){
@@ -98,7 +96,6 @@ class Experiment1 extends Component {
     handleClickPrintValue = false
     handleClickReTry = true
     this.setState(txtStyle)
-    console.log("printvalue")
   }
 
   reTry(){
@@ -114,8 +111,16 @@ class Experiment1 extends Component {
     disabledB = false
     this.setState(txtStyle)
   }
-  render() {
+
+  sendButtonValue(){
+    const buttonValue = buttonValueP.concat(buttonValueQ)
+    const { manyTypeData } = this.props
     const { moveEx } = this.props
+    manyTypeData("game", JSON.parse(JSON.stringify(buttonValue)))
+    moveEx("experiment2")
+  }
+
+  render() {
     return (
       <Card>
         <CardTitle title="ボルダルール実験" subtitle="目指せ！最高得点！" />
@@ -211,7 +216,7 @@ class Experiment1 extends Component {
             :null
           }
         </CardText>
-        <FlatButton onClick={moveEx.bind(this,"experiment2")} style={{ float:'right', margin:'5%'}}>次へ</FlatButton>
+      <FlatButton onClick={this.sendButtonValue.bind(this)} style={{ float:'right', margin:'5%'}}>次へ</FlatButton>
       </Card>
     )
   }
