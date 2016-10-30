@@ -12,12 +12,17 @@ import EvaluationAxis from 'util/EvaluationAxis'
 import Button from './dnd/Button'
 
 
+const SUBJECT_LENGTH = 3
 let array     = new Array();
 let data      = new Array();
 let dragCardCall = 0;
-const length  = Subjects.length
+const length  = SUBJECT_LENGTH
 let pageCounter= 0
 const isMobile= navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone)/i) !== null
+const boxText =[
+  "Aグループのボタンについて獲得点数に与えた影響が大きい順に並び替えてください。",
+  "Bグループのボタンについて獲得点数に与えた影響が大きい順に並び替えてください。",
+  "Aグループ全体とBグループ全体を比較して獲得点数に与えた影響が大きい順に並び替えてください。"]
 
 for(let i=0; i<length; i++){
   array[i]   = new Array();
@@ -27,7 +32,7 @@ for(let i=0; i<length; i++){
 
   data[i] = new Array();
   data[i][0] = i;
-  data[i][1] = Subjects[i];
+  data[i][1] = Subjects[pageCounter][i];
 }
 
 
@@ -93,7 +98,7 @@ class App extends Component {
 
         data[i] = new Array()
         data[i][0] = i;
-        data[i][1] = Subjects[i];
+        data[i][1] = Subjects[pageCounter][i];
       }
       console.log("array:%s",JSON.stringify(array))
       this.setState({array,data})
@@ -103,7 +108,7 @@ class App extends Component {
     return (
         <Card style={{overflow: 'hidden'}}>
             <CardTitle title="ボルダルール実験" subtitle="並び替え評価" />
-            <p>この色のボタンについて答えてください</p>
+            <p style={{marginLeft: '10%'}}>{boxText[pageCounter]}</p>
             <div style={{float:'left', marginLeft: '10%'}}>
               <Card>
                 <Box pageCounter={pageCounter}>

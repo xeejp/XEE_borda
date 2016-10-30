@@ -37,11 +37,11 @@ class FirstCard extends Component{
 		const { isDragging, connectDragSource } = this.props;
 		const { text, pageCounter,index } = this.props;
 		const opacity = isDragging ? 0.4 : 1;
-    const axisText={'P': '青のボタン', 'Q': '緑のボタン'}
+    const axisText={'A': 'Aグループ', 'B': 'Bグループ'}
 		return (
 			connectDragSource(
 				<div style={{ ...style, opacity }}>
-				<Card style={{ backgroundColor: (pageCounter == 0)?'#64FFDA':(pageCounter == 1)?'#76FF03':(text == "P")?'#64FFDA':'#76FF03' }}>
+				<Card>
 				<CardHeader
 					title={(pageCounter == 2)? axisText[text] : text}
 				/>

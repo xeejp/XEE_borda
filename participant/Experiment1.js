@@ -121,53 +121,55 @@ class Experiment1 extends Component {
         <CardTitle title="ボルダルール実験" subtitle="目指せ！最高得点！" />
         <CardText>
 
-          <Card style={{float:'left'}}>
-            <div style={{textAlign:'center'}}>
-              <RaisedButton backgroundColor="white" style={{ ...buttonStyle}} disabled={true}>
-                <div style={{ ...txtStyle }}>
-                  <h6>Aグループ</h6>
-                </div>
-              </RaisedButton>
+          <div style={{textAlign:'center'}}>
+            <Card style={{float:'left'}}>
+              <div style={{textAlign:'center'}}>
+                <RaisedButton backgroundColor="white" style={{ ...buttonStyle}} disabled={true}>
+                  <div style={{ ...txtStyle }}>
+                    <h6>Aグループ</h6>
+                  </div>
+                </RaisedButton>
 
-              <RaisedButton backgroundColor="white" style={{ ...buttonStyle}} disabled={true}>
-                <div style={{ ...txtStyle }}>
-                  <h6>Bグループ</h6>
-                </div>
-              </RaisedButton>
-            </div>
-          </Card>
+                <RaisedButton backgroundColor="white" style={{ ...buttonStyle}} disabled={true}>
+                  <div style={{ ...txtStyle }}>
+                    <h6>Bグループ</h6>
+                  </div>
+                </RaisedButton>
+              </div>
+            </Card>
 
-          <Card style={{float:'left'}}>
-            <div style={{textAlign:'center'}}>
-              <RaisedButton disabledBackgroundColor={isClickA1 ?"#F44336":"white"} disabled={disabledA} onClick={this.ansP.bind(this,buttonValueP[0], "A1")} style={{ ...buttonStyle}}>
-                <div style={{ ...txtStyle }}>
-                  <h5>A1</h5>
-                </div>
-              </RaisedButton>
+            <Card style={{float:'left'}}>
+              <div style={{textAlign:'center'}}>
+                <RaisedButton disabledBackgroundColor={isClickA1 ?"#F44336":"white"} disabled={disabledA} onClick={this.ansP.bind(this,buttonValueP[0], "A1")} style={{ ...buttonStyle}}>
+                  <div style={{ ...txtStyle }}>
+                    <h5>A1</h5>
+                  </div>
+                </RaisedButton>
 
-              <RaisedButton disabledBackgroundColor={isClickB1 ?"#F44336":"white"} disabled={disabledB} onClick={this.ansQ.bind(this,buttonValueQ[0], "B1")} style={{ ...buttonStyle}}>
-                <div style={{ ...txtStyle }}>
-                  <h5>B1</h5>
-                </div>
-              </RaisedButton>
-            </div>
-          </Card>
+                <RaisedButton disabledBackgroundColor={isClickB1 ?"#F44336":"white"} disabled={disabledB} onClick={this.ansQ.bind(this,buttonValueQ[0], "B1")} style={{ ...buttonStyle}}>
+                  <div style={{ ...txtStyle }}>
+                    <h5>B1</h5>
+                  </div>
+                </RaisedButton>
+              </div>
+            </Card>
 
-          <Card style={{float:'left'}}>
-            <div style={{textAlign:'center'}}>
-              <RaisedButton disabledBackgroundColor={isClickA2 ?"#F44336":"white"} disabled={disabledA} onClick={this.ansP.bind(this,buttonValueP[1], "A2")} style={{ ...buttonStyle}}>
-                <div style={{ ...txtStyle }}>
-                  <h5>A2</h5>
-                </div>
-              </RaisedButton>
+            <Card style={{float:'left'}}>
+              <div style={{textAlign:'center'}}>
+                <RaisedButton disabledBackgroundColor={isClickA2 ?"#F44336":"white"} disabled={disabledA} onClick={this.ansP.bind(this,buttonValueP[1], "A2")} style={{ ...buttonStyle}}>
+                  <div style={{ ...txtStyle }}>
+                    <h5>A2</h5>
+                  </div>
+                </RaisedButton>
 
-              <RaisedButton disabledBackgroundColor={isClickB2 ?"#F44336":"white"} disabled={disabledB} onClick={this.ansQ.bind(this,buttonValueQ[1], "B2")} style={{ ...buttonStyle}}>
-                <div style={{ ...txtStyle }}>
-                  <h5>B2</h5>
-                </div>
-              </RaisedButton>
-            </div>
-          </Card>
+                <RaisedButton disabledBackgroundColor={isClickB2 ?"#F44336":"white"} disabled={disabledB} onClick={this.ansQ.bind(this,buttonValueQ[1], "B2")} style={{ ...buttonStyle}}>
+                  <div style={{ ...txtStyle }}>
+                    <h5>B2</h5>
+                  </div>
+                </RaisedButton>
+              </div>
+            </Card>
+          </div>
 
           <Card style={{float:'left'}}>
             <div style={{textAlign:'center'}}>

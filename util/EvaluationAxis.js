@@ -1,3 +1,3 @@
-const EvaluationAxis = ["P","Q",];	
+const EvaluationAxis = ["A","B"];	
 
 export default EvaluationAxis

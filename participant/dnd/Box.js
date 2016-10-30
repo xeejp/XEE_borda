@@ -15,7 +15,7 @@ class Box extends Component{
     const { pageCounter } = this.props
       return (
         <div style={{...style }}>
-          <Card style={{marginBottom: '.5rem', backgroundColor: (pageCounter == 0)?'#64FFDA':(pageCounter == 1)?'#76FF03':'white'}}>
+          <Card style={{marginBottom: '.5rem', backgroundColor: '#C5CAE9'}}>
             <CardHeader
               title="この下にドロップして並び替えてください"
             />

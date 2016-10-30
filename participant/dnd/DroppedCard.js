@@ -31,7 +31,7 @@ const cardSource = {
 
 const cardTarget = {
 	hover(props, monitor, component) {
-		const dragIndex = monitor.getItem().index;//drag‚³‚ê‚Ä‚é—v‘f‚Ìindex‚ğæ“¾
+		const dragIndex = monitor.getItem().index;//dragã•ã‚Œã¦ã‚‹è¦ç´ ã®indexã‚’å–å¾—
 		const hoverIndex = props.index;
 
 		if (dragIndex === hoverIndex) {
@@ -40,9 +40,9 @@ const cardTarget = {
 
 		const hoverBoundingRect = findDOMNode(component).getBoundingClientRect();
 
-		const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;//‚‚³Š„‚Q
+		const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;//é«˜ã•å‰²ï¼’
 
-		const clientOffset = monitor.getClientOffset();//drop‚µ‚Ä‚¢‚½ÅŒã‚ÌÀ•W
+		const clientOffset = monitor.getClientOffset();//dropã—ã¦ã„ãŸæœ€å¾Œã®åº§æ¨™
 
 		const hoverClientY = clientOffset.y - hoverBoundingRect.top;
 
@@ -83,20 +83,20 @@ class DroppedCard extends Component{
 		const { flag, text, index, pageCounter, isDragging, connectDragSource, connectDropTarget } = this.props;
 		const opacity = isDragging ? 0 : 1;
 		const no = index+1;
-		const title="No."+no+" "+text;
-    const axisText={'P': 'Â‚Ìƒ{ƒ^ƒ“', 'Q': '—Î‚Ìƒ{ƒ^ƒ“'}
+		const title=no+"ä½ "+text;
+    const axisText={'A': 'Aã‚°ãƒ«ãƒ¼ãƒ—', 'B': 'Bã‚°ãƒ«ãƒ¼ãƒ—'}
 
 		if( flag == false ){
 			return connectDragSource(connectDropTarget(
 				<div style={{ ...style ,opacity}}>
-				<div>No.{index+1} {text}</div>
+				<div>{index+1}ä½ {text}</div>
 				</div>
 			));
 		}
 		else{
 			return connectDragSource(connectDropTarget(
         <div style={{ ...cardStyle ,opacity}}>
-				<Card style={{backgroundColor: (pageCounter == 0)?'#64FFDA':(pageCounter == 1)?'#76FF03':(text == "P")?'#64FFDA':'#76FF03'}}>
+				<Card>
 				<CardHeader
 				title={(pageCounter == 2)? axisText[text] : title}
 				/>

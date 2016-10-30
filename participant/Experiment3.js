@@ -16,6 +16,7 @@ const mapStateToProps = ({}) => ({
 let DnDResult = new Array()
 let Num = 0
 let ResultCounter = 0
+const SUBJECT_LENGTH = 3
 
 class Experiment2 extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class Experiment2 extends Component {
 
       for(let i=0; i<=EvaluationAxis.length; i++){
         if(i < EvaluationAxis.length){
-          for(let d=0; d<Subjects.length; d++){
+          for(let d=0; d<SUBJECT_LENGTH; d++){
             result[ResultCounter] = DnDResult[i][d][1]
             ResultCounter++
           }
