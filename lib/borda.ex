@@ -1,10 +1,10 @@
-defmodule AllaisParadox do
+defmodule Borda do
   use XeeThemeScript
   require Logger
 
-  alias AllaisParadox.Main
-  alias AllaisParadox.Host
-  alias AllaisParadox.Participant
+  alias Borda.Main
+  alias Borda.Host
+  alias Borda.Participant
 
   # Callbacks
   def script_type do

@@ -1,5 +1,5 @@
-defmodule AllaisParadox.Main do
-  alias AllaisParadox.Actions
+defmodule Borda.Main do
+  alias Borda.Actions
 
   @pages ["waiting", "description", "experiment", "result"]
   @sequence ["question1", "question2", "answered"]
