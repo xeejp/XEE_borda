@@ -68,11 +68,9 @@ class Experiment2 extends Component {
     slideResult[3]=qa
     slideResult[4]=qb
     slideResult[5]=qc
-    console.log("finish")
 
     const { manyTypeData } = this.props
     manyTypeData("5axis", JSON.parse(JSON.stringify(slideResult)))
-    console.log("manyTypeData")
   }
 
   render() {

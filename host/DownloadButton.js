@@ -19,7 +19,7 @@ const DownloadButton = ({ participants, style, disabled }) => (
         = "ボルダルール実験\n" 
         + "実験日," + new Date() + "\n"
         + "登録者数," + Object.keys(participants).length + "\n"
-        + "ID,5段階評価:pa,pb,pc,qa,qb,qc,並び替え:pの1位,pの2位,pの3位,qの1位,qの2位,qの3位,評価軸の1位,評価軸の2位\n"
+        + "ID,5段階評価:A1,A2,A3,B1,B2,B3,pa,pb,pc,qa,qb,qc,並び替え:Aグループの1位,2位,3位,Bグループの1位,2位,3位,評価軸の1位,評価軸の2位\n"
         + Object.keys(participants).map(id => [id, 
 
             participants[id].question1,
