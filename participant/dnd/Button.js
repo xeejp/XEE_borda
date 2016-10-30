@@ -16,7 +16,7 @@ const style = {
 
 class Button extends Component{
   render(){
-    const { next, array} = this.props;
+    const { next, array, data} = this.props;
     return (
       <div>
         <FlatButton 
@@ -29,6 +29,7 @@ class Button extends Component{
           onClick={next.bind(this,array)} 
           style={{...style}}
           primary={true} 
+          disabled={data != 0}
         />
       </div>
     );

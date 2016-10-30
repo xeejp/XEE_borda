@@ -219,7 +219,7 @@ class Experiment2 extends Component {
                   style={{float: "right"}}
                   onTouchTap={this.handleNext.bind(this)}
                   primary={true}
-                  disabled={this.state.slideIndex == 6}
+                  disabled={this.state.slideIndex == 6 || eval("this.state.sliderValue"+(this.state.slideIndex+1)) == 0}
                 />
 
               <RaisedButton
@@ -229,7 +229,6 @@ class Experiment2 extends Component {
                 disabled={this.state.slideIndex == 0}
               />
             </div>
-
           </Card>
         </div>
       </Card>
