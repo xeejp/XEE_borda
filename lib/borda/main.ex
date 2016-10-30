@@ -22,7 +22,7 @@ defmodule Borda.Main do
       question1: %{},
       question2: %{},
       active: true,
-      joinedNumber: data.joined,
+      joined: data.joined,
       qswap: false,
     }
   end

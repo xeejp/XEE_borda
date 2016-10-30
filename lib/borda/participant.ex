@@ -9,6 +9,7 @@ defmodule Borda.Participant do
       participants: %{
         id => %{
           _default: true,
+          joined: "joinedNumber"
         }
       },
       _spread: [[:participants, id]]
