@@ -109,7 +109,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider1}
                   />
                   <div style={{ padding:"5%"}}>
-                    <h4>ボタンA1がポイントに与える影響力は５段階評価で{this.state.sliderValue1}</h4>
+                    <h4>ボタンA1がポイントに与える影響力は５段階評価で{(this.state.sliderValue1==0 || this.state.sliderValue1==6)?null:this.state.sliderValue1}</h4>
                   </div>
                 </div>
 
@@ -124,7 +124,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider2}
                   />
                   <div style={{ padding:"5%"}}>
-                    <h4>ボタンA2がポイントに与える影響力は５段階評価で{this.state.sliderValue2}</h4>
+                    <h4>ボタンA2がポイントに与える影響力は５段階評価で{(this.state.sliderValue2==0 || this.state.sliderValue2==6)?null:this.state.sliderValue2}</h4>
                   </div>
                 </div>
 
@@ -139,7 +139,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider3}
                   />
                   <div style={{ padding:"5%"}}>
-                    <h4>ボタンA3がポイントに与える影響力は５段階評価で{this.state.sliderValue3}</h4>
+                    <h4>ボタンA3がポイントに与える影響力は５段階評価で{(this.state.sliderValue3==0 || this.state.sliderValue3==6)?null:this.state.sliderValue3}</h4>
                   </div>
                 </div>
 
@@ -154,7 +154,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider4}
                   />
                   <div style={{ padding:"5%"}}>
-                    <h4>ボタンB1がポイントに与える影響力は５段階評価で{this.state.sliderValue4}</h4>
+                    <h4>ボタンB1がポイントに与える影響力は５段階評価で{(this.state.sliderValue4==0 || this.state.sliderValue4==6)?null:this.state.sliderValue4}</h4>
                   </div>
                 </div>
 
@@ -169,7 +169,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider5}
                   />
                   <div style={{ padding:"5%"}}>
-                    <h4>ボタンB2がポイントに与える影響力は５段階評価で{this.state.sliderValue5}</h4>
+                    <h4>ボタンB2がポイントに与える影響力は５段階評価で{(this.state.sliderValue5==0 || this.state.sliderValue5==6)?null:this.state.sliderValue5}</h4>
                   </div>
                 </div>
 
@@ -184,7 +184,7 @@ class Experiment2 extends Component {
                     onChange={this.handleSlider6}
                   />
                   <div style={{ padding:"5%"}}>
-                    <h4>ボタンB3がポイントに与える影響力は５段階評価で{this.state.sliderValue6}</h4>
+                    <h4>ボタンB3がポイントに与える影響力は５段階評価で{(this.state.sliderValue6==0 || this.state.sliderValue6==6)?null:this.state.sliderValue6}</h4>
                   </div>
                 </div>
 
@@ -219,7 +219,7 @@ class Experiment2 extends Component {
                   style={{float: "right"}}
                   onTouchTap={this.handleNext.bind(this)}
                   primary={true}
-                  disabled={this.state.slideIndex == 6 || eval("this.state.sliderValue"+(this.state.slideIndex+1)) == 0}
+                  disabled={this.state.slideIndex == 6 || eval("this.state.sliderValue"+(this.state.slideIndex+1)) == 0 || eval("this.state.sliderValue"+(this.state.slideIndex+1)) == 6}
                 />
 
               <RaisedButton
