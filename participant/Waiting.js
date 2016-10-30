@@ -8,7 +8,7 @@ const mapStateToProps = ({ joined }) => ({
   joined
 })
 
-const Waiting = ({ joined, question_text }) => (
+const Waiting = ({ joined }) => (
 	<Card>
 		<CardTitle title="ボルダルール実験" subtitle="待機画面" />
 		<CardText>

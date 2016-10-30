@@ -2,6 +2,21 @@ defmodule Borda.Participant do
   alias Borda.Actions
 
   # Actions
+  def filter_data(data, id) do
+    rule=%{
+      page: true,
+      joined: true,
+      participants: %{
+        id => %{
+          _default: true,
+        }
+      },
+      _spread: [[:participants, id]]
+    }
+    
+    data
+    |> Transmap.transform(rule)
+  end
   def fetch_contents(data, id) do
     Actions.update_participant_contents(data, id)
   end
@@ -10,7 +25,6 @@ defmodule Borda.Participant do
     IO.puts(selected["next"])
     data = data |> put_in([:participants, id, :sequence], selected["next"])
     data = data |> put_in([:participants, id, :question1], selected["selected"])
-    Actions.next_question(data, id, selected)
   end
 
   def next_question_ans(data, id, selected) do
@@ -18,23 +32,6 @@ defmodule Borda.Participant do
     data = data |> put_in([:participants, id, :sequence], selected["next"])
     data = data |> Map.put(:answered, data.answered + 1)
     data = data |> put_in([:participants, id, :question2], selected["selected"])
-    Actions.next_question(data, id, selected)
-  end
-
-  # Utilities
-  def format_participant(participant), do: participant
-
-  def format_data(data) do
-    %{
-      page: data.page,
-    }
-  end
-
-  def format_contents(data, id) do
-    %{participants: participants} = data
-    participant = Map.get(participants, id)
-    format_participant(participant)
-      |> Map.merge(format_data(data))
   end
 end
 

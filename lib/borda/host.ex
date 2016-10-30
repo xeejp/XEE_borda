@@ -5,6 +5,15 @@ defmodule Borda.Host do
   require Logger
 
   # Actions
+
+  def filter_data(data) do
+    rule=%{
+      _default: true,
+    }
+    data
+    |> Transmap.transform(rule)
+  end
+
   def fetch_contents(data) do
     data
     |> Actions.update_host_contents()
@@ -13,7 +22,6 @@ defmodule Borda.Host do
   def change_page(data, page) do
     if page in Main.pages do
       %{data | page: page}
-      |> Actions.change_page(page)
     else
       data
     end
@@ -51,11 +59,5 @@ defmodule Borda.Host do
                 |> Enum.take_every(2)
                 |> Enum.map(fn {id, value} -> {id, Map.put(value, :qswap, false)} end)
                 |> Enum.into(%{})))
-    Actions.all_reset(data)
-  end
-
-  # Utilities
-  def format_contents(data) do
-    data
   end
 end

@@ -22,7 +22,7 @@ defmodule Borda.Main do
       question1: %{},
       question2: %{},
       active: true,
-      joined: 1,
+      joinedNumber: data.joined,
       qswap: false,
     }
   end
@@ -30,12 +30,9 @@ defmodule Borda.Main do
   def join(data, id) do
     unless Map.has_key?(data.participants, id) do
       new = new_participant(data)
-      new = new |> Map.put(:joined, Map.size(data.participants) + 1)
-      data = data |> Map.put(:participants, Enum.into(Enum.map(data.participants, fn {id, map} ->
-        {id, Map.put(map, :joined, Map.size(data.participants) + 1)}
-      end), %{}))
-      put_in(data, [:participants, id], new)
-      |> Actions.join(id, new)
+      data
+      |> Map.update!(:joined, &(&1+1))
+      |>put_in([:participants, id], new)
     else
       data
     end
