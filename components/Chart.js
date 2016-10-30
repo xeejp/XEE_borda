@@ -5,22 +5,29 @@ import throttle from 'react-throttle-render'
 import { Card, CardHeader, CardText } from 'material-ui/Card'
 import Highcharts from 'react-highcharts'
 
+const mapStateToProps = ({ joined, answered}) => ({
+  joined,
+  answered
+})
+
 class Chart extends Component {
   constructor(props) {
     super(props)
   }
 
   render() {
+    const { joined, answered } = this.props
     return (
     <Card>
       <CardHeader
-        title={"実験結果"}
+        title={"status"}
         actAsExpander={true}
         showExpandableButton={true}
       />
       <CardText expandable={true}>
         <span>
-          <p>this page is rendering by ./components/Chart.js</p>
+          <p>joined:{joined}</p>
+          <p>answered:{answered}</p>
         </span>
       </CardText>
     </Card>
@@ -28,4 +35,4 @@ class Chart extends Component {
   }
 }
 
-export default connect()(throttle(Chart, 200))
+export default connect(mapStateToProps)(Chart)
