@@ -234,7 +234,6 @@ class Experiment2 extends Component {
               </SwipeableViews>
 
               <div style={{ margin:"2%"}}>
-                {this.state.slideIndex == 6 ?
                   <RaisedButton 
                     label="次へ"
                     onClick={this.finish.bind(this,
@@ -248,8 +247,6 @@ class Experiment2 extends Component {
                     style={{ float:'left'}}
                     primary={true}
                   />
-                  : null
-                }
 
                 <RaisedButton
                   label="進む"

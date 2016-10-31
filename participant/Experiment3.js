@@ -14,6 +14,7 @@ const mapStateToProps = ({}) => ({
 })
 
 let DnDResult = new Array()
+let arrayResult    = new Array()
 let Num = 0
 let ResultCounter = 0
 const SUBJECT_LENGTH = 3
@@ -31,30 +32,26 @@ class Experiment2 extends Component {
       this.setState(DnDResult)
     }
     if(Num == EvaluationAxis.length){
-      let result    = new Array()
-      const { manyTypeData } = this.props
-
       for(let i=0; i<=EvaluationAxis.length; i++){
         if(i < EvaluationAxis.length){
           for(let d=0; d<SUBJECT_LENGTH; d++){
-            result[ResultCounter] = DnDResult[i][d][1]
+            arrayResult[ResultCounter] = DnDResult[i][d][1]
             ResultCounter++
           }
         }
         if(i == EvaluationAxis.length){
           for(let l=0; l<EvaluationAxis.length; l++){
-            result[ResultCounter] = DnDResult[i][l][1]
+            arrayResult[ResultCounter] = DnDResult[i][l][1]
             ResultCounter++
           }
         }
       }
-      manyTypeData("dnd",JSON.parse(JSON.stringify(result)))
     }
     Num++
   }
 
   render() {
-    const { moveEx ,result } = this.props
+    const { moveEx , manyTypeData } = this.props
 
     return(
       <div>
@@ -64,8 +61,9 @@ class Experiment2 extends Component {
               Num = {Num}
               dataBarn= {this.dataBarn}
             />
-            : <EndQuestion 
-              result={result}
+            :<EndQuestion 
+              arrayResult={arrayResult}
+              manyTypeData = {manyTypeData}
             />
           }
         </Card>

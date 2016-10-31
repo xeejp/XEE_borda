@@ -21,7 +21,6 @@ const actionCreators = {
 }
 
 let ex="experiment1"
-let result = new Object()
 let manyTypeDataCall = 0
 let game = new Array()
 const dt = [1,2]
@@ -40,7 +39,6 @@ class Experiment extends Component {
   }
 
   manyTypeData(fromData, dtArray){
-    result[fromData] = dtArray 
 
     if(fromData == "game"){
       game = JSON.parse(JSON.stringify(dtArray))
@@ -81,7 +79,6 @@ class Experiment extends Component {
           <Experiment3 
             moveEx={this.moveEx}
             manyTypeData = {this.manyTypeData}
-            result={result}
           />
         )
       default:
