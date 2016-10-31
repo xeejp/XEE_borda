@@ -218,7 +218,7 @@ class Experiment1 extends Component {
             :null
           }
         </CardText>
-        <FlatButton disabled={clickPrint<10}
+        <FlatButton 
           onClick={this.sendButtonValue.bind(this)} 
           style={{ float:'right', margin:'5%'}}>
           先生の指示を受けてから押してください(5段階評価に進みます)
