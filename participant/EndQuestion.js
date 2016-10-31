@@ -40,8 +40,10 @@ class EndQuestion extends Component {
     if(endQ){
       return (
         <Card>
-          <CardTitle title="ボルダルール実験" subtitle="AグループはBグループの何倍率？" />
+          <CardTitle title="ボルダルール実験" subtitle="AグループはBグループの何倍？" />
           <CardText>
+            <p>AグループはBグループの何倍くらい結果に与える影響が大きいと思いますか？</p>
+            <p>何倍大きいかを数字でお答えください</p>
             <TextField
               hintText=""
               value={value}
