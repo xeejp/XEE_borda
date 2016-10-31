@@ -200,15 +200,22 @@ class Experiment1 extends Component {
               label="ポイント表示"
               primary="true"
               disabled={!(disabledA && disabledB)}
-              style={{marginLeft: '3%', marginTop: '3%'}}
+              style={{marginLeft: '3%', marginTop: '3%', float:'left'}}
             />)
             :(<RaisedButton
               onClick={this.reTry.bind(this)}
               label="再挑戦"
               backgroundColor="#76FF03"
-              style={{marginLeft: '3%', marginTop: '3%'}}
+              style={{marginLeft: '3%', marginTop: '3%', float: 'left'}}
             />)
           }
+        <FlatButton 
+          onClick={this.sendButtonValue.bind(this)} 
+          disabled={clickPrint < 10}
+          style={{ float:'right', marginRight: '3%', marginTop: '3%' ,position: "relative"}}>
+          先生の指示を受けてから押してください(5段階評価に進みます)
+        </FlatButton>
+        <div style={{clear:'both'}}/>
           {handleClickReTry?
             (<div>
               <h3 style={{float:'left',}}>得点</h3>
@@ -217,13 +224,7 @@ class Experiment1 extends Component {
             </div>)
             :null
           }
-        </CardText>
-        <FlatButton 
-          onClick={this.sendButtonValue.bind(this)} 
-          disabled={clickPrint < 10}
-          style={{ float:'right', margin:'5%'}}>
-          先生の指示を受けてから押してください(5段階評価に進みます)
-        </FlatButton>
+      </CardText>
       </Card>
     )
   }
