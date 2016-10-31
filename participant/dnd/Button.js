@@ -29,7 +29,6 @@ class Button extends Component{
           onClick={next.bind(this,array)} 
           style={{...style}}
           primary={true} 
-          disabled={data != 0}
         />
       </div>
     );

@@ -3,7 +3,9 @@ import { connect } from 'react-redux'
 
 import {Card, CardText, CardTitle } from 'material-ui/Card'
 import CircularProgress from 'material-ui/CircularProgress'
-
+import TextField from 'material-ui/TextField'
+import FlatButton from 'material-ui/FlatButton'
+import RaisedButton from 'material-ui/RaisedButton'
 
 const mapStateToProps = ({}) => ({
 })
@@ -27,8 +29,9 @@ class EndQuestion extends Component {
   handleClick(){
     const { manyTypeData, result } = this.props
     const { value } = this.state
-    isClick = true
-    manyTypeData("dnd",JSON.parse(JSON.stringify(result.push(value))))
+    let dndArray=result.push(value)
+    endQ=false
+    manyTypeData("dnd",dndArray)
   }
 
   render() {
