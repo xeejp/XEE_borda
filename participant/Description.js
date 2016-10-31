@@ -99,7 +99,7 @@ class Description extends Component {
               style={{float: "right"}}
               onTouchTap={this.handleNext.bind(this)}
               primary={true}
-              disabled={this.state.slideIndex == 4}
+              disabled={this.state.slideIndex == 5}
             />
           </div>
         </Card>
