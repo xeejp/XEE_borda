@@ -38,6 +38,7 @@ let disabledA = false
 let disabledB = false
 let handleClickPrintValue = true
 let handleClickReTry = false
+let clickPrint = 0
 
 class Experiment1 extends Component {
   constructor(props) {
@@ -93,6 +94,7 @@ class Experiment1 extends Component {
   }
 
   printValue(){
+    clickPrint++
     handleClickPrintValue = false
     handleClickReTry = true
     this.setState(txtStyle)
@@ -216,7 +218,11 @@ class Experiment1 extends Component {
             :null
           }
         </CardText>
-      <FlatButton onClick={this.sendButtonValue.bind(this)} style={{ float:'right', margin:'5%'}}>次へ</FlatButton>
+        <FlatButton disabled={clickPrint<10}
+          onClick={this.sendButtonValue.bind(this)} 
+          style={{ float:'right', margin:'5%'}}>
+          先生の指示を受けてから押してください(5段階評価に進みます)
+        </FlatButton>
       </Card>
     )
   }
