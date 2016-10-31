@@ -124,6 +124,7 @@ class Experiment2 extends Component {
                     min={0}
                     max={5}
                     step={1}
+                    axis={((joinedNumber+1)%2 == 0)? 'x' : 'x-reverse'}
                     defaultValue={slideResult[1]}  
                     onChange={this.handleSlider2}
                   />
@@ -146,6 +147,7 @@ class Experiment2 extends Component {
                     min={0}
                     max={5}
                     step={1}
+                    axis={((joinedNumber+1)%2 == 0)? 'x' : 'x-reverse'}
                     defaultValue={slideResult[2]} 
                     onChange={this.handleSlider3}
                   />
@@ -168,6 +170,7 @@ class Experiment2 extends Component {
                     min={0}
                     max={5}
                     step={1}
+                    axis={((joinedNumber+1)%2 == 0)? 'x' : 'x-reverse'}
                     defaultValue={slideResult[3]}  
                     onChange={this.handleSlider4}
                   />
@@ -190,6 +193,7 @@ class Experiment2 extends Component {
                     min={0}
                     max={5}
                     step={1}
+                    axis={((joinedNumber+1)%2 == 0)? 'x' : 'x-reverse'}
                     defaultValue={slideResult[4]} 
                     onChange={this.handleSlider5}
                   />
@@ -212,6 +216,7 @@ class Experiment2 extends Component {
                     min={0}
                     max={5}
                     step={1}
+                    axis={((joinedNumber+1)%2 == 0)? 'x' : 'x-reverse'}
                     defaultValue={slideResult[5]} 
                     onChange={this.handleSlider6}
                   />
