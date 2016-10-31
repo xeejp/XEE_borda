@@ -27,11 +27,12 @@ class EndQuestion extends Component {
   }
 
   handleClick(){
-    const { manyTypeData, result } = this.props
+    const { manyTypeData, arrayResult } = this.props
     const { value } = this.state
-    let dndArray=result.push(value)
+    console.log("result"+JSON.stringify(arrayResult))
     endQ=false
-    manyTypeData("dnd",dndArray)
+    manyTypeData("dnd",JSON.parse(JSON.stringify(arrayResult.concat(value))))
+ this.setState({ value })
   }
 
   render() {
@@ -52,7 +53,7 @@ class EndQuestion extends Component {
               style={{marginLeft: '3%'}}
               primary={true} 
               onClick={this.handleClick.bind(this)} 
-              disabled={isnan}
+              disabled={isnan || value == 0 || value > 100}
             />
           </CardText>
         </Card>
